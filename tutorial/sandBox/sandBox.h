@@ -28,7 +28,7 @@ public:
 	void caculateCostAndPlacment(int index, int edge, Eigen::MatrixXd& V);
 	void simplification();
 	bool collapse_edge(Eigen::MatrixXd& V, Eigen::MatrixXi& F, int id);
-	void drawBox(Eigen::AlignedBox<double, 3> box, int color,int id);
+	void drawBox(Eigen::AlignedBox<double, 3>& box, int color,int id);
 	bool thereIsCollision(igl::AABB<Eigen::MatrixXd, 3>* treeA, igl::AABB<Eigen::MatrixXd, 3>* treeB,int other_id);
 	bool boxesIntersect(Eigen::AlignedBox<double, 3>& boxA, Eigen::AlignedBox<double, 3>& boxB, int other_id);
 	double doubleVariable;

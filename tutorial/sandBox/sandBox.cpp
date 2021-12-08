@@ -62,6 +62,7 @@ void SandBox::move2Objects(){
 	data_list[1].MyTranslate(Eigen::Vector3d(-0.5, 0, 0), true);
 
 }
+
 void SandBox::initData()
 {
 	int size = data_list.size();
@@ -298,7 +299,7 @@ bool SandBox::collapse_edge(Eigen::MatrixXd& V, Eigen::MatrixXi& F, int id){
 
 }
 
-void SandBox::drawBox(Eigen::AlignedBox<double, 3> box, int color,int id) {
+void SandBox::drawBox(Eigen::AlignedBox<double, 3>& box, int color,int id) {
 	data_list[id].point_size = 10;
 	data_list[id].line_width = 3;
 	Eigen::RowVector3d colorVec;
@@ -336,6 +337,7 @@ bool SandBox::thereIsCollision(igl::AABB<Eigen::MatrixXd, 3>* treeA, igl::AABB<E
 	if (treeA == nullptr || treeB == nullptr)
 		return false;
 	if (treeA->is_leaf() && treeB->is_leaf()) {
+		std::cout << "both are leafs" << std::endl;
 		//if the boxes intersect than draw the  boxes
 		if (boxesIntersect(treeA->m_box, treeB->m_box, other_id)) {
 			std::cout << "collapse" << std::endl;
@@ -349,8 +351,21 @@ bool SandBox::thereIsCollision(igl::AABB<Eigen::MatrixXd, 3>* treeA, igl::AABB<E
 
 	}
 	//base case
-	if (!boxesIntersect(treeA->m_box, treeB->m_box,other_id))
-			return false;
+	if (!boxesIntersect(treeA->m_box, treeB->m_box, other_id))
+		return false;
+
+	 if (treeA->is_leaf() && !treeB->is_leaf()) {
+		 std::cout << "A is a leaf" << std::endl;
+		 return thereIsCollision(treeA, treeB-> m_right, other_id) ||
+			 thereIsCollision(treeA, treeB->m_left, other_id);
+	}
+	 if (!treeA->is_leaf() && treeB->is_leaf()) {
+		 std::cout << "B is a leaf" << std::endl;
+		 return thereIsCollision(treeA->m_right, treeB, other_id) ||
+			  thereIsCollision(treeA->m_left, treeB, other_id);
+	 }
+
+
 	//recursively check for intersactions case
     return thereIsCollision(treeA->m_left, treeA->m_left, other_id) ||
 		   thereIsCollision(treeA->m_left, treeB->m_right, other_id) ||

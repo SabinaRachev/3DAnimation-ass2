@@ -1,0 +1,14 @@
+# Target labels
+ stb-download
+# Source files and their labels
+C:/Users/sabin/Downloads/EngineForAnimationCourse/external/.cache/stb/CMakeFiles/stb-download
+C:/Users/sabin/Downloads/EngineForAnimationCourse/external/.cache/stb/CMakeFiles/43303aa049eb66f76ccb8c94675d8261/stb-download.rule
+C:/Users/sabin/Downloads/EngineForAnimationCourse/external/.cache/stb/CMakeFiles/3114b73b6a3dd61bedca73b648d7f12c/stb-download-complete.rule
+C:/Users/sabin/Downloads/EngineForAnimationCourse/external/.cache/stb/CMakeFiles/569c403361c1c648d87f1c2ab3a264e3/stb-download-build.rule
+C:/Users/sabin/Downloads/EngineForAnimationCourse/external/.cache/stb/CMakeFiles/569c403361c1c648d87f1c2ab3a264e3/stb-download-configure.rule
+C:/Users/sabin/Downloads/EngineForAnimationCourse/external/.cache/stb/CMakeFiles/569c403361c1c648d87f1c2ab3a264e3/stb-download-download.rule
+C:/Users/sabin/Downloads/EngineForAnimationCourse/external/.cache/stb/CMakeFiles/569c403361c1c648d87f1c2ab3a264e3/stb-download-install.rule
+C:/Users/sabin/Downloads/EngineForAnimationCourse/external/.cache/stb/CMakeFiles/569c403361c1c648d87f1c2ab3a264e3/stb-download-mkdir.rule
+C:/Users/sabin/Downloads/EngineForAnimationCourse/external/.cache/stb/CMakeFiles/569c403361c1c648d87f1c2ab3a264e3/stb-download-patch.rule
+C:/Users/sabin/Downloads/EngineForAnimationCourse/external/.cache/stb/CMakeFiles/569c403361c1c648d87f1c2ab3a264e3/stb-download-test.rule
+C:/Users/sabin/Downloads/EngineForAnimationCourse/external/.cache/stb/CMakeFiles/569c403361c1c648d87f1c2ab3a264e3/stb-download-update.rule

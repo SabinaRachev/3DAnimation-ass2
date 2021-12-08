@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\sabin\Downloads\EngineForAnimationCourse\external\.cache\eigen\CMakeFiles\bd77ac1290b576724e2ca65874113a9d\eigen-download-mkdir.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\sabin\Downloads\EngineForAnimationCourse\external\.cache\eigen\CMakeFiles\bd77ac1290b576724e2ca65874113a9d\eigen-download-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\sabin\Downloads\EngineForAnimationCourse\external\.cache\eigen\CMakeFiles\bd77ac1290b576724e2ca65874113a9d\eigen-download-update.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\sabin\Downloads\EngineForAnimationCourse\external\.cache\eigen\CMakeFiles\bd77ac1290b576724e2ca65874113a9d\eigen-download-patch.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\sabin\Downloads\EngineForAnimationCourse\external\.cache\eigen\CMakeFiles\bd77ac1290b576724e2ca65874113a9d\eigen-download-configure.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\sabin\Downloads\EngineForAnimationCourse\external\.cache\eigen\CMakeFiles\bd77ac1290b576724e2ca65874113a9d\eigen-download-build.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\sabin\Downloads\EngineForAnimationCourse\external\.cache\eigen\CMakeFiles\bd77ac1290b576724e2ca65874113a9d\eigen-download-install.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\sabin\Downloads\EngineForAnimationCourse\external\.cache\eigen\CMakeFiles\bd77ac1290b576724e2ca65874113a9d\eigen-download-test.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\sabin\Downloads\EngineForAnimationCourse\external\.cache\eigen\CMakeFiles\e0af421816f7229ae96792cc648658c5\eigen-download-complete.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\sabin\Downloads\EngineForAnimationCourse\external\.cache\eigen\CMakeFiles\90835bb2ab2381232c58f6096af95b2a\eigen-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\sabin\Downloads\EngineForAnimationCourse\external\.cache\eigen\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\sabin\Downloads\EngineForAnimationCourse\external\.cache\eigen\CMakeFiles\eigen-download" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{FB473527-B33A-39BD-BC63-08B9489E4CC5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,3 @@
+C:/Users/sabin/Downloads/EngineForAnimationCourse/external/.cache/glfw/CMakeFiles/glfw-download.dir
+C:/Users/sabin/Downloads/EngineForAnimationCourse/external/.cache/glfw/CMakeFiles/ALL_BUILD.dir
+C:/Users/sabin/Downloads/EngineForAnimationCourse/external/.cache/glfw/CMakeFiles/ZERO_CHECK.dir

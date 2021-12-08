@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\sabin\Downloads\EngineForAnimationCourse\external\.cache\glad\CMakeFiles\90b75255b44ad24015f25961bb53f7ed\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{34299F00-DD0E-3693-96E8-2F8EE6D85D87}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

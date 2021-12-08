@@ -1,0 +1,11 @@
+# ninja log v5
+1	575	656787896	glad-download-prefix/src/glad-download-stamp/glad-download-mkdir	15370794a977d389
+575	716	656787896	glad-download-prefix/src/glad-download-stamp/glad-download-download	3fb58298b7a62dcc
+717	919	656787896	glad-download-prefix/src/glad-download-stamp/glad-download-patch	67d03869bda90436
+720	1012	0	glad-download-prefix/src/glad-download-stamp/glad-download-update	dc2a73780550b2b
+1012	1229	656787896	glad-download-prefix/src/glad-download-stamp/glad-download-configure	538f598055833636
+1229	1338	656787897	glad-download-prefix/src/glad-download-stamp/glad-download-build	5061ce3e98dc4e1b
+1338	1467	656787897	glad-download-prefix/src/glad-download-stamp/glad-download-install	d872b55f16eac416
+1468	1643	656787897	glad-download-prefix/src/glad-download-stamp/glad-download-test	aff2f7cf7704ab7f
+1643	1871	656787897	CMakeFiles/glad-download-complete	66158d6beba87c36
+1643	1871	656787897	glad-download-prefix/src/glad-download-stamp/glad-download-done	66158d6beba87c36

@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Users/sabin/Downloads/EngineForAnimationCourse/external/.cache/stb/CMakeFiles/stb-download"
+		},
+		{
+			"file" : "C:/Users/sabin/Downloads/EngineForAnimationCourse/external/.cache/stb/CMakeFiles/43303aa049eb66f76ccb8c94675d8261/stb-download.rule"
+		},
+		{
+			"file" : "C:/Users/sabin/Downloads/EngineForAnimationCourse/external/.cache/stb/CMakeFiles/3114b73b6a3dd61bedca73b648d7f12c/stb-download-complete.rule"
+		},
+		{
+			"file" : "C:/Users/sabin/Downloads/EngineForAnimationCourse/external/.cache/stb/CMakeFiles/569c403361c1c648d87f1c2ab3a264e3/stb-download-build.rule"
+		},
+		{
+			"file" : "C:/Users/sabin/Downloads/EngineForAnimationCourse/external/.cache/stb/CMakeFiles/569c403361c1c648d87f1c2ab3a264e3/stb-download-configure.rule"
+		},
+		{
+			"file" : "C:/Users/sabin/Downloads/EngineForAnimationCourse/external/.cache/stb/CMakeFiles/569c403361c1c648d87f1c2ab3a264e3/stb-download-download.rule"
+		},
+		{
+			"file" : "C:/Users/sabin/Downloads/EngineForAnimationCourse/external/.cache/stb/CMakeFiles/569c403361c1c648d87f1c2ab3a264e3/stb-download-install.rule"
+		},
+		{
+			"file" : "C:/Users/sabin/Downloads/EngineForAnimationCourse/external/.cache/stb/CMakeFiles/569c403361c1c648d87f1c2ab3a264e3/stb-download-mkdir.rule"
+		},
+		{
+			"file" : "C:/Users/sabin/Downloads/EngineForAnimationCourse/external/.cache/stb/CMakeFiles/569c403361c1c648d87f1c2ab3a264e3/stb-download-patch.rule"
+		},
+		{
+			"file" : "C:/Users/sabin/Downloads/EngineForAnimationCourse/external/.cache/stb/CMakeFiles/569c403361c1c648d87f1c2ab3a264e3/stb-download-test.rule"
+		},
+		{
+			"file" : "C:/Users/sabin/Downloads/EngineForAnimationCourse/external/.cache/stb/CMakeFiles/569c403361c1c648d87f1c2ab3a264e3/stb-download-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"stb-download"
+		],
+		"name" : "stb-download"
+	}
+}

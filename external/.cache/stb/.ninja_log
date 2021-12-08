@@ -1,0 +1,11 @@
+# ninja log v5
+1	1036	656787907	stb-download-prefix/src/stb-download-stamp/stb-download-mkdir	f11ad585d72bd8ef
+1036	1215	656787908	stb-download-prefix/src/stb-download-stamp/stb-download-download	7ed41c07a23c8765
+1219	1437	656787908	stb-download-prefix/src/stb-download-stamp/stb-download-patch	2a86d9e6f7a74248
+1215	1524	0	stb-download-prefix/src/stb-download-stamp/stb-download-update	3d025986cd1b3938
+1524	1675	656787908	stb-download-prefix/src/stb-download-stamp/stb-download-configure	bf25f2f2a307bb4e
+1675	1914	656787908	stb-download-prefix/src/stb-download-stamp/stb-download-build	6fcae74ec11a9624
+1914	2103	656787909	stb-download-prefix/src/stb-download-stamp/stb-download-install	1a7c536f76a16b32
+2103	2446	656787909	stb-download-prefix/src/stb-download-stamp/stb-download-test	1af8e698f274e9fb
+2446	2806	656787909	CMakeFiles/stb-download-complete	e48eee88c15b3af8
+2446	2806	656787909	stb-download-prefix/src/stb-download-stamp/stb-download-done	e48eee88c15b3af8

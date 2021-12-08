@@ -1,0 +1,10 @@
+^C:\USERS\SABIN\DOWNLOADS\ENGINEFORANIMATIONCOURSE\EXTERNAL\.CACHE\GLFW\CMAKEFILES\D86709301BF948AAD8538390A2E20393\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/sabin/Downloads/EngineForAnimationCourse/external/.cache/glfw -BC:/Users/sabin/Downloads/EngineForAnimationCourse/external/.cache/glfw --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/sabin/Downloads/EngineForAnimationCourse/external/.cache/glfw/glfw-download.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

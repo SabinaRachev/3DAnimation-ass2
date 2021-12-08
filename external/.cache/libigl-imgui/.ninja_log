@@ -1,0 +1,11 @@
+# ninja log v5
+1	322	656787905	libigl-imgui-download-prefix/src/libigl-imgui-download-stamp/libigl-imgui-download-mkdir	d735be627cf083c
+322	443	656787905	libigl-imgui-download-prefix/src/libigl-imgui-download-stamp/libigl-imgui-download-download	11a8c1c44da3a2e2
+446	548	656787905	libigl-imgui-download-prefix/src/libigl-imgui-download-stamp/libigl-imgui-download-patch	6a912ac2c94117d9
+443	648	0	libigl-imgui-download-prefix/src/libigl-imgui-download-stamp/libigl-imgui-download-update	bd0ae75819410bae
+648	745	656787905	libigl-imgui-download-prefix/src/libigl-imgui-download-stamp/libigl-imgui-download-configure	1e94340b8dc3ff9e
+745	853	656787905	libigl-imgui-download-prefix/src/libigl-imgui-download-stamp/libigl-imgui-download-build	ba65aed1fb287e96
+853	940	656787905	libigl-imgui-download-prefix/src/libigl-imgui-download-stamp/libigl-imgui-download-install	e1efd5f9c69c7322
+940	1036	656787905	libigl-imgui-download-prefix/src/libigl-imgui-download-stamp/libigl-imgui-download-test	c698ef6f45819a5d
+1036	1166	656787905	CMakeFiles/libigl-imgui-download-complete	8cec49227b0c1482
+1036	1166	656787905	libigl-imgui-download-prefix/src/libigl-imgui-download-stamp/libigl-imgui-download-done	8cec49227b0c1482

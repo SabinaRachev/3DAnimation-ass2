@@ -1,0 +1,11 @@
+# ninja log v5
+1	372	656787902	imgui-download-prefix/src/imgui-download-stamp/imgui-download-mkdir	d0bbf7fd667773f
+372	488	656787902	imgui-download-prefix/src/imgui-download-stamp/imgui-download-download	cedaed462e9a78fe
+492	613	656787902	imgui-download-prefix/src/imgui-download-stamp/imgui-download-patch	7fe66e9c78919f22
+489	702	0	imgui-download-prefix/src/imgui-download-stamp/imgui-download-update	d2be5a2de791801f
+703	807	656787902	imgui-download-prefix/src/imgui-download-stamp/imgui-download-configure	fe19f35dc6b6cf6
+807	906	656787902	imgui-download-prefix/src/imgui-download-stamp/imgui-download-build	78ee8d5ebf925055
+906	1015	656787903	imgui-download-prefix/src/imgui-download-stamp/imgui-download-install	8ee13b684fb2bfb5
+1015	1106	656787903	imgui-download-prefix/src/imgui-download-stamp/imgui-download-test	48f7e19cddfda17d
+1106	1405	656787903	CMakeFiles/imgui-download-complete	8dc274202196403c
+1106	1405	656787903	imgui-download-prefix/src/imgui-download-stamp/imgui-download-done	8dc274202196403c

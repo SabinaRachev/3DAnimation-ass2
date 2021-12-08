@@ -1,0 +1,11 @@
+# ninja log v5
+1	433	656787899	glfw-download-prefix/src/glfw-download-stamp/glfw-download-mkdir	bd4eaff27d4e56da
+433	528	656787899	glfw-download-prefix/src/glfw-download-stamp/glfw-download-download	e1eea6653792fc8a
+529	724	656787899	glfw-download-prefix/src/glfw-download-stamp/glfw-download-patch	34afbb0cd5822016
+531	853	0	glfw-download-prefix/src/glfw-download-stamp/glfw-download-update	e519f94a3be39992
+854	969	656787899	glfw-download-prefix/src/glfw-download-stamp/glfw-download-configure	8927d454455d8dfa
+969	1067	656787900	glfw-download-prefix/src/glfw-download-stamp/glfw-download-build	bf3faf817b0bf815
+1067	1150	656787900	glfw-download-prefix/src/glfw-download-stamp/glfw-download-install	93dd11de231bbddb
+1151	1234	656787900	glfw-download-prefix/src/glfw-download-stamp/glfw-download-test	ce6f50096bf3993
+1234	1535	656787900	CMakeFiles/glfw-download-complete	7036c467d37b8546
+1234	1535	656787900	glfw-download-prefix/src/glfw-download-stamp/glfw-download-done	7036c467d37b8546

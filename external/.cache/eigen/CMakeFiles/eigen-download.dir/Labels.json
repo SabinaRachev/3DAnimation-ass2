@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Users/sabin/Downloads/EngineForAnimationCourse/external/.cache/eigen/CMakeFiles/eigen-download"
+		},
+		{
+			"file" : "C:/Users/sabin/Downloads/EngineForAnimationCourse/external/.cache/eigen/CMakeFiles/90835bb2ab2381232c58f6096af95b2a/eigen-download.rule"
+		},
+		{
+			"file" : "C:/Users/sabin/Downloads/EngineForAnimationCourse/external/.cache/eigen/CMakeFiles/e0af421816f7229ae96792cc648658c5/eigen-download-complete.rule"
+		},
+		{
+			"file" : "C:/Users/sabin/Downloads/EngineForAnimationCourse/external/.cache/eigen/CMakeFiles/bd77ac1290b576724e2ca65874113a9d/eigen-download-build.rule"
+		},
+		{
+			"file" : "C:/Users/sabin/Downloads/EngineForAnimationCourse/external/.cache/eigen/CMakeFiles/bd77ac1290b576724e2ca65874113a9d/eigen-download-configure.rule"
+		},
+		{
+			"file" : "C:/Users/sabin/Downloads/EngineForAnimationCourse/external/.cache/eigen/CMakeFiles/bd77ac1290b576724e2ca65874113a9d/eigen-download-download.rule"
+		},
+		{
+			"file" : "C:/Users/sabin/Downloads/EngineForAnimationCourse/external/.cache/eigen/CMakeFiles/bd77ac1290b576724e2ca65874113a9d/eigen-download-install.rule"
+		},
+		{
+			"file" : "C:/Users/sabin/Downloads/EngineForAnimationCourse/external/.cache/eigen/CMakeFiles/bd77ac1290b576724e2ca65874113a9d/eigen-download-mkdir.rule"
+		},
+		{
+			"file" : "C:/Users/sabin/Downloads/EngineForAnimationCourse/external/.cache/eigen/CMakeFiles/bd77ac1290b576724e2ca65874113a9d/eigen-download-patch.rule"
+		},
+		{
+			"file" : "C:/Users/sabin/Downloads/EngineForAnimationCourse/external/.cache/eigen/CMakeFiles/bd77ac1290b576724e2ca65874113a9d/eigen-download-test.rule"
+		},
+		{
+			"file" : "C:/Users/sabin/Downloads/EngineForAnimationCourse/external/.cache/eigen/CMakeFiles/bd77ac1290b576724e2ca65874113a9d/eigen-download-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"eigen-download"
+		],
+		"name" : "eigen-download"
+	}
+}

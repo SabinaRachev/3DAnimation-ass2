@@ -1,5 +1,5 @@
 ass1 :
-
+---
 The following files were the ones that we had modified to support the simplification algorithm:
 
 1.Sandbox.cpp / Sandbox.h
@@ -11,7 +11,7 @@ The following files were the ones that we had modified to support the simplifica
 4.ImGuiMenu - added the command viewer->initData() to the function that handles loading objects.
 
 ass2:
-
+---
 The following files were the ones that we had modified to support the collision detection algorithm:
 
 1.Sandbox.cpp / Sandbox.h
@@ -20,7 +20,7 @@ The following files were the ones that we had modified to support the collision 
 
 
 in order to run the project:
-
+---
 1.clone the git repository
 
 2.Run Cmake gui. choose the project folder and destination folder for the cpp project files.

@@ -56,10 +56,63 @@ void SandBox::Init(const std::string &config)
 SandBox::~SandBox()
 {
 }
+void SandBox::loadCylindersAndSphere(int numberOfCylinder) {
+	numberOflinks = numberOfCylinder;
+	int num = numberOfCylinder + 1;
+	parents.resize(num);
+	trees.resize(num);
+	std::ifstream file("configuration.txt");
+	std::string line;
+	if (!std::getline(file, line)) {
+		line = "C:/Users/sabin/Downloads/EngineForAnimationCourse/tutorial/data/zcylinder.obj";
+	}
+	for (int i = 0; i < numberOfCylinder; i++) {
+		load_mesh_from_file(line);
+		make_zaxis(i);
+	}
+	float z_top = data_list[numberOfCylinder-1].V.colwise().maxCoeff()[2];
+	float link_size = z_top * 2;
+	if (!std::getline(file, line)) {
+		line = "C:/Users/sabin/Downloads/EngineForAnimationCourse/tutorial/data/sphere.obj";
+		std::cout << "i am here8" << std::endl;
+	}
+	load_mesh_from_file(line);
+	addShape(numberOfCylinder,0);
+	data_list[numberOfCylinder].MyTranslate(Eigen::Vector3d(5, 0, 0), true);
+	MyTranslate(Eigen::Vector3d(0, -2, -9),true);
+	std::cout << "i am here11" << std::endl;
+	data_list[0].MyTranslate(Eigen::Vector3d(0, 0, -link_size),true);
+	parents[numberOfCylinder] = -1;
+}
+
+void SandBox::addShape(int id,int zpoint) {
+	data_list[id].add_points(Eigen::RowVector3d(0, 0, 0), Eigen::RowVector3d(0, 0, 1));
+	data_list[id].show_overlay_depth = false;
+	data_list[id].point_size = 10;
+	data_list[id].line_width = 2;
+	data_list[id].set_visible(false, 1);
+}
+void SandBox::make_zaxis(int id){
+	Eigen::MatrixXd& V = data_list[id].V;
+	Eigen::Vector3d max = V.colwise().maxCoeff();
+	Eigen::Vector3d min = V.colwise().minCoeff();
+	float max_z = max[2];
+	float min_z = min[2];
+	parents[id] = id-1; //set parent
+	addShape(id,-0.8);
+	//initialize
+    data_list[id].SetCenterOfRotation(Eigen::Vector3d(V.colwise().mean()[0], V.colwise().mean()[1],min_z));
+	data_list[id].MyTranslate(Eigen::Vector3d(0,0, 2 * max_z),true);
+	//draw box
+	igl::AABB<Eigen::MatrixXd, 3> objectTree;
+	objectTree.init(V, data_list[id].F);
+	trees[id] = objectTree;
+	drawBox(objectTree.m_box, 0, id);
+}
 
 void SandBox::move2Objects(){
-	data_list[0].MyTranslate(Eigen::Vector3d(0.5,0,0), true);
-	data_list[1].MyTranslate(Eigen::Vector3d(-0.5, 0, 0), true);
+	data_list[0].MyTranslate(Eigen::Vector3d(1,0,0), true);
+	data_list[1].MyTranslate(Eigen::Vector3d(-1, 0, 0), true);
 
 }
 
@@ -300,8 +353,6 @@ bool SandBox::collapse_edge(Eigen::MatrixXd& V, Eigen::MatrixXi& F, int id){
 }
 
 void SandBox::drawBox(Eigen::AlignedBox<double, 3>& box, int color,int id) {
-	data_list[id].point_size = 10;
-	data_list[id].line_width = 3;
 	Eigen::RowVector3d colorVec;
 	if (color == 1) {
 		colorVec = Eigen::RowVector3d(255, 0, 0);
@@ -330,18 +381,25 @@ void SandBox::drawBox(Eigen::AlignedBox<double, 3>& box, int color,int id) {
 	data_list[id].add_edges(TopRightFloor, BottomRightFloor, colorVec);
 	data_list[id].add_edges(TopRightCeil, BottomRightCeil, colorVec);
 	data_list[id].add_edges(TopLeftFloor, BottomLeftFloor, colorVec);
+	data_list[id].point_size = 10;
+	data_list[id].line_width = 3;
 }
 
-bool SandBox::thereIsCollision(igl::AABB<Eigen::MatrixXd, 3>* treeA, igl::AABB<Eigen::MatrixXd, 3>* treeB,int other_id){
+bool SandBox::thereIsCollision(igl::AABB<Eigen::MatrixXd, 3>* treeA, igl::AABB<Eigen::MatrixXd, 3>* treeB,int id,int other_id){
 	//base cases
 	if (treeA == nullptr || treeB == nullptr)
 		return false;
+	
+	if (!boxesIntersect(treeA->m_box, treeB->m_box, other_id)) {
+		return false;
+	}
 	if (treeA->is_leaf() && treeB->is_leaf()) {
-		std::cout << "both are leafs" << std::endl;
 		//if the boxes intersect than draw the  boxes
 		if (boxesIntersect(treeA->m_box, treeB->m_box, other_id)) {
 			std::cout << "collapse" << std::endl;
-			drawBox(treeA->m_box, 2, selected_data_index);
+			std::cout << id << std::endl;
+			std::cout << other_id << std::endl;
+			drawBox(treeA->m_box, 2, id);
 			drawBox(treeB->m_box, 1, other_id);
 			return true;
 		}
@@ -350,27 +408,20 @@ bool SandBox::thereIsCollision(igl::AABB<Eigen::MatrixXd, 3>* treeA, igl::AABB<E
 		}
 
 	}
-	//base case
-	if (!boxesIntersect(treeA->m_box, treeB->m_box, other_id))
-		return false;
-
 	 if (treeA->is_leaf() && !treeB->is_leaf()) {
-		 std::cout << "A is a leaf" << std::endl;
-		 return thereIsCollision(treeA, treeB-> m_right, other_id) ||
-			 thereIsCollision(treeA, treeB->m_left, other_id);
+		 return thereIsCollision(treeA, treeB-> m_right,id, other_id) ||
+			 thereIsCollision(treeA, treeB->m_left,id,  other_id);
 	}
 	 if (!treeA->is_leaf() && treeB->is_leaf()) {
-		 std::cout << "B is a leaf" << std::endl;
-		 return thereIsCollision(treeA->m_right, treeB, other_id) ||
-			  thereIsCollision(treeA->m_left, treeB, other_id);
+		 return thereIsCollision(treeA->m_right, treeB,id, other_id) ||
+			  thereIsCollision(treeA->m_left, treeB,id, other_id);
 	 }
 
-
 	//recursively check for intersactions case
-    return thereIsCollision(treeA->m_left, treeA->m_left, other_id) ||
-		   thereIsCollision(treeA->m_left, treeB->m_right, other_id) ||
-		   thereIsCollision(treeA->m_right, treeB->m_left, other_id) ||
-		   thereIsCollision(treeA->m_right, treeB->m_right, other_id);
+    return thereIsCollision(treeA->m_left, treeA->m_left,id, other_id) ||
+		   thereIsCollision(treeA->m_left, treeB->m_right,id, other_id) ||
+		   thereIsCollision(treeA->m_right, treeB->m_left,id, other_id) ||
+		   thereIsCollision(treeA->m_right, treeB->m_right,id, other_id);
 }
 
 
@@ -413,9 +464,10 @@ bool SandBox::boxesIntersect(Eigen::AlignedBox<double, 3>& boxA, Eigen::AlignedB
 		return false;
 	if (b(2) + (a(0) * abs(C.row(0)(2)) + a(1) * abs(C.row(1)(2)) + a(2) * abs(C.row(2)(2))) < abs(B2.transpose() * D))
 		return false;
+	//check A0 
 	double R = C.row(1)(0) * A2.transpose() * D;
 	R-=C.row(2)(0) * A1.transpose() * D;
-	if (a(0) * abs(C.row(2)(0)) + a(2) * abs(C.row(1)(0)) + b(1) * abs(C.row(0)(2))+ b(2) * abs(C.row(0)(1)) < abs(R))
+	if (a(1) * abs(C.row(2)(0)) + a(2) * abs(C.row(1)(0)) + b(1) * abs(C.row(0)(2))+ b(2) * abs(C.row(0)(1)) < abs(R))
 		return false;
 
 	R = C.row(1)(1) * A2.transpose() * D;
@@ -445,17 +497,17 @@ bool SandBox::boxesIntersect(Eigen::AlignedBox<double, 3>& boxA, Eigen::AlignedB
 		return false;
 	//check A2 conditions
 
-	 R = C.row(1)(0) * A2.transpose() * D;
-	R -= C.row(2)(0) * A1.transpose() * D;
+	 R = C.row(0)(0) * A1.transpose() * D;
+	R -= C.row(1)(0) * A0.transpose() * D;
 	if (a(0) * abs(C.row(1)(0)) + a(1) * abs(C.row(0)(0)) + b(1) * abs(C.row(2)(2)) + b(2) * abs(C.row(2)(1)) < abs(R))
 		return false;
 
-	R = C.row(1)(1) * A2.transpose() * D;
-	R -= C.row(2)(1) * A1.transpose() * D;
+	R = C.row(0)(1) * A1.transpose() * D;
+	R -= C.row(1)(1) * A0.transpose() * D;
 	if (a(0) * abs(C.row(1)(1)) + a(1) * abs(C.row(0)(1)) + b(0) * abs(C.row(2)(2)) + b(2) * abs(C.row(2)(0)) < abs(R))
 		return false;
-	R = C.row(0)(2) * A2.transpose() * D;
-	R -= C.row(1)(2) * A1.transpose() * D;
+	R = C.row(0)(2) * A1.transpose() * D;
+	R -= C.row(1)(2) * A0.transpose() * D;
 	if (a(0) * abs(C.row(1)(2)) + a(1) * abs(C.row(0)(2)) + b(0) * abs(C.row(2)(1)) + b(1) * abs(C.row(2)(0)) < abs(R))
 		return false;
 	
@@ -482,7 +534,7 @@ void SandBox::Animate(){
 		int size = data_list.size();
 			for (int i = 0; i < size; i++) {
 				if (i != selected_data_index) {
-					if (thereIsCollision(&trees[selected_data_index], &trees[i], i)) {
+					if (thereIsCollision(&trees[selected_data_index], &trees[i], selected_data_index, i)) {
 						shouldAnimate = false;
 						break;
 					}
@@ -491,5 +543,6 @@ void SandBox::Animate(){
 	}
 
 }
+
 
 

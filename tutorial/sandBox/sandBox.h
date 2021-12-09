@@ -29,8 +29,12 @@ public:
 	void simplification();
 	bool collapse_edge(Eigen::MatrixXd& V, Eigen::MatrixXi& F, int id);
 	void drawBox(Eigen::AlignedBox<double, 3>& box, int color,int id);
-	bool thereIsCollision(igl::AABB<Eigen::MatrixXd, 3>* treeA, igl::AABB<Eigen::MatrixXd, 3>* treeB,int other_id);
-	bool boxesIntersect(Eigen::AlignedBox<double, 3>& boxA, Eigen::AlignedBox<double, 3>& boxB, int other_id);
+	bool thereIsCollision(igl::AABB<Eigen::MatrixXd, 3>* treeA, igl::AABB<Eigen::MatrixXd, 3>* treeB,int id,int other_id);
+	bool boxesIntersect(Eigen::AlignedBox<double, 3>& boxA, Eigen::AlignedBox<double, 3>& boxB , int other_id);
+	void loadCylindersAndSphere(int numOfCylinders);
+	void make_zaxis(int id);
+	void addShape(int id,int zpoint);
+	void Animate();
 	double doubleVariable;
 private:
 	// Prepare array-based edge data structures and priority queue
@@ -45,6 +49,8 @@ private:
 	std::vector< Eigen::Vector3d> velocities;
     std::vector< igl::AABB<Eigen::MatrixXd, 3>> trees;
     std::vector< igl::AABB<Eigen::MatrixXd, 3>> subTrees;
-	void Animate();
+	int numberOflinks;
+	int tipPos;
+	int destination;
 };
 

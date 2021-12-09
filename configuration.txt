@@ -1,2 +1,2 @@
-C:/Users/sabin/Downloads/EngineForAnimationCourse/tutorial/data/bunny.off
-C:/Users/sabin/Downloads/EngineForAnimationCourse/tutorial/data/bunny.off
+C:/Users/sabin/Downloads/EngineForAnimationCourse/tutorial/data/arm.obj
+C:/Users/sabin/Downloads/EngineForAnimationCourse/tutorial/data/sphere.obj
